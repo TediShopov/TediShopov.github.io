@@ -77,7 +77,7 @@ Alone but far from helpless, you must protect your slums from an oncoming hoard,
 * **Performance Optimization**  
   Used Unreal's Profiler and Memory Insights to identify and resolve critical bottlenecks in code, unoptimized assets and solve bugs. 
 
-[See More --->](./Chempunch.md)
+[See More --->](./Chempunch.html)
 
 
 
@@ -107,19 +107,28 @@ as the pitch goes:
 ## Toot The Lute 
 Engine: **Unity**, Duration: **Feb 2025 To May 2025**, Team-size:  **7**, Role:  **Project Lead & Programmer**
 
-> Toot The Lute combines the isometric combat of Hades with the rhythm game system inpisred by Bullets Per Minute (BPM). 
-> Click on the beats to performs dashes, attacks and accumulate combos. 
+Toot The Lute combines the isometric combat of Hades with the rhythm game system inpisred by Bullets Per Minute (BPM). 
+Click on the beats to performs dashes, attacks and accumulate combos. 
 
-[See More --->](./TootTheLute.md)
+#### DEVELOPED SYSTEMS 
+* **Rhythm gameplay system**
+  The system can detect if input is pressed on the correct beat. Beats are stored in custom "beatmap" data structure wholding repeatable pattern of beats and paused.
+  Additionally, the system is extended by extendable "beat track" HUD that visualizes the moving beats on track.
+
+* **Dynamic audio/input and audio/visual latencies callibratoin**
+  Added a whole UI scene that can adjust audio/input latenyc by clicking on the beat. Audio/visual latency in adjusted by button controlling offset.
+
+[See More --->](./TootTheLute.html)
 
 
 ## Ratking 
 Engine: **Unity**, Duration: **Feb 2023 To May 2023**, Team-size:  **7**, Role:  **Programmer**
 The game was created in accordance to brief provided by a Modern Wolf.
 
-> Ratking is a stealth-platformer game in which you play as a rat trying to infiltrate a mansion of cats.
+Ratking is a stealth-platformer game in which you play as a rat trying to infiltrate a mansion of cats.
 
 
+#### DEVELOPED SYSTEMS 
 * **Navigation Graph Builder**
   Built a graph-based navigation system for 2D side-scrolling platforming, capable of handling rigid platforms, one-way platforms, 30° and 45° slopes, and ladders.
   Used by enemy patrol AI to traverse the level. Includes a custom in-editor visualization tool to preview nodes and debug graph generation issues.
@@ -134,9 +143,10 @@ Developed a fully simulated trajectory preview system for thrown objects.
 Unlike standard parabolic previews, this system accounts for physics-based collisions and bounces, allowing players to plan noise-based distractions with high accuracy.
 
 * **Classic Stealth Game State Machine**
-Implemented a Patrol, Search and Chase state machine for the enemy guards. 
-Additionally, once player is seen his position is propagated to nearby guards.
+mplemented a classical stealth AI state machine: Patrol → Search → Chase.
+When a guard detects the player, the last known location is propagated to nearby allies, enabling coordinated responses.
 
+[See More --->](./RatkingMD.html)
 
 
 
