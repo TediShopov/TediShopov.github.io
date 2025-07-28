@@ -2,6 +2,7 @@
 layout: default
 title: Chempunch
 description: A first-person wave-defense action game.
+permalink: /Chempunch.html
 ---
 
 

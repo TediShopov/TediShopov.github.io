@@ -2,6 +2,8 @@
 layout: default
 title: Toot The Lute
 description: A combat rhythm game.
+
+permalink: /TootTheLute.html
 ---
  ## Welcome to another page
 
