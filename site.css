@@ -72,3 +72,54 @@
     color: #159957;
 
 }
+
+.icon {
+  width: 1em;
+  height: 1em;
+  stroke-width: 2;
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+.project-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.project-showcase .media {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.project-showcase .media img,
+.project-showcase .media video,
+.project-showcase .media iframe
+ {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  max-height: 300px;
+  border-radius: 8px;
+}
+
+.project-showcase .contributions {
+  flex: 1 1 300px;
+}
+
+.project-showcase ul {
+  padding-left: 1.2em;
+  list-style-type: disc;
+}
+
+.project-showcase li {
+  margin-bottom: 0.5em;
+}
+
+/* Mobile behavior */
+@media (max-width: 768px) {
+  .project-showcase {
+    flex-direction: column;
+  }
+}

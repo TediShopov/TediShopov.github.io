@@ -4,11 +4,39 @@ title: Teodor Shopov
 description: Gameplay Systems / Computer Graphics Programmer
 ---
 
-**Contact Me**
-* Email : [teodorshopov01@gmail.com](teodorshopov00@gmail.com)
-* Github : [https://github.com/TediShopov](https://github.com/TediShopov)
+<link rel="stylesheet" href="site.css">
 
-[More information about me](./about-me.html).
+**About Me**
+
+Passionate game programmer with hands-on experience since 2017. Started with backend web development in C#/ASP.NET, then transitioned fully into game programming to pursue systems-driven, creative development. Focused on building gameplay systems, real-time graphics, and developer tools that empower designers and enhance iteration speed.
+[See More --->](./about-me.html)
+
+<span><svg data-lucide="mail" class="icon"></svg><a href="mailto:teodorshopov01@gmail.com">teodorshopov01@gmail.com</a></span>
+<span><svg data-lucide="github" class="icon"></svg> <a href="https://github.com/TediShopov" target="_blank">TediShopov</a></span>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lucide Icon Test</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      background: #222;
+      color: white;
+      font-family: sans-serif;
+      padding: 2em;
+    }
+
+    .icon {
+      width: 1.5em;
+      height: 1.5em;
+      color: white; /* makes icon white if stroke uses currentColor */
+      vertical-align: middle;
+      margin-left: 0.5em;
+    }
+  </style>
+</head>
 
 <!--
 ----- Should I even include this ones ---
@@ -33,6 +61,16 @@ description: Gameplay Systems / Computer Graphics Programmer
 
 </details>
 -->
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    lucide.createIcons();
+  });
+</script>
+
+
+
 <style>
 .center {
   margin: auto;
@@ -44,107 +82,128 @@ description: Gameplay Systems / Computer Graphics Programmer
 # Gameplay System Projects
 
 ## Chempunch
+<p>
+  <svg data-lucide="cpu" class="icon"></svg>  Unreal Engine,WWise  
+  <svg data-lucide="calendar" class="icon"></svg>  May 2024 – August 2024  
+  <svg data-lucide="users" class="icon"></svg>  8  
+  <svg data-lucide="user-cog" class="icon"></svg>  Generalist & AI Programmer
 
-Engine: **Unreal Engine**, Duration: **May 2024 To August 2024**, Team-size:  **8**, Role:  **Programmer**
-The project became a Dare Academy finalist and was presented at **EGX X MCM 2024 LONDON**.
+  <br>
+  <svg data-lucide="award" class="icon"></svg> Dare Academy Finalist  
+  <svg data-lucide="map-pin" class="icon"></svg> Presented at <strong>EGX x MCM 2024 London</strong>
+</p>
 
 
-<div class="center"> 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QnLPjNRj2Zg?si=e1Z3GXbthDfSVBGe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<div class="project-showcase">
+  <div class="media">
+    <!-- Replace with <video> if needed -->
+
+<iframe   src="https://www.youtube.com/embed/QnLPjNRj2Zg?si=e1Z3GXbthDfSVBGe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <div class="contributions">
+    <h4>Notable Contributions</h4>
+    <ul>
+      <li>  Enemy horde AI utilizing behaviour trees, EQS, custom utility services</li>
+      <li>  Congestion-aware pathfinding </li>
+      <li>  Controllable dynamic difficulty system</li>
+    </ul>
+  </div>
 </div>
 
-<div class="center"> 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/68KRv2RYLxA?si=9M80v7d6afHufgTS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+Chempunch is a first-person wave-defence action game in which I worked a generalist and AI programmer.
+ Additionally, I helped with plugin integration (WWise) across multiple environments, conducted extensive profiling for performance and bugfixing and 
+ helped with git merges.
 
 
-#### PITCH 
-Chempunch is an intense wave defence action game focussing on reactive but aggressive gameplay in a chempunk world.
-Alone but far from helpless, you must protect your slums from an oncoming hoard, using chemicals you route around your body to empower different actions.
 
-#### DEVELOPED SYSTEMS 
-
-
-* **Enemy AI System**  
-  Designed a flexible AI framework utilizing Behavior Trees, Environment Query System and custom utility functions. Some enemies attack the objective, other defend those attacker and third type aggressively collapses on player.
-  
-* **Congestion-Aware Pathfinding**  
-  Augmented Unreal’s built-in pathfinding with congestion tracking diversifying enemy pathing toward objectives. The system was proposed by me to reduce the workload from manually placed path routes by designer.
-
-* **Dynamic Difficulty Scaling**  
-  Exposed designer controllable scalars and animation curves to control how __player score__ is accumulated and how it applied to **enemy spawning ratio**, **tier** and **aggressiveness**.
-
-* **Performance Optimization**  
-  Used Unreal's Profiler and Memory Insights to identify and resolve critical bottlenecks in code, unoptimized assets and solve bugs. 
-
-[See More --->](./Chempunch.html)
 
 
 
 <!--
+I developed a modular **enemy AI** system using utility scoring,**behavior trees** and **Environemnt Query System (EQS)**,
+ implemented a **congestion-aware pathfinding** extension, and built a **dynamic difficulty** system that scaled challenge based on player performance.
 
-* Developed with **Unreal Engine** 
-* From May 2024 To August 2024.
-* Eight-person team
-* Dare Finalist project. 
-* Presented at EXG X MCM LONDON 2024.
-
-#### Description
-A first-person action packed wave-defense experience with some resource management mechanics or 
-as the pitch goes:
-
-> "Chempunch is an intense wave defence action game focussing on reactive but aggressive gameplay in a chempunk world.
->  Alone but far from helpless, you must protect your slums from an oncoming hoard, using chemicals you route around your body to empower different actions."
-
-#### Role And Responsiblities
-* Developed AI system for the enemies leveraging UE behaviour trees custom AI utility functions 
-* Extended UE’s path finding system to accommodate for congestion, diversifying enemy pathing – and saving manual designer labor. 
-* Programmed a designer controllable dynamic difficulty system 
-* Profiled performance and memory usage, finding critical bottlenecks in code an unoptimized assets. 
 -->
+
+[See More --->](./Chempunch.html)
 
 
 ## Toot The Lute 
-Engine: **Unity**, Duration: **Feb 2025 To May 2025**, Team-size:  **7**, Role:  **Project Lead & Programmer**
+
+<p>
+  <svg data-lucide="cpu" class="icon"></svg>  Unity, WWise
+  <svg data-lucide="calendar" class="icon"></svg>  Feb 2025 To May 2025
+  <svg data-lucide="users" class="icon"></svg>  7
+  <svg data-lucide="user-cog" class="icon"></svg>  Project Lead & Programmer
+
+  <br>
+  <svg data-lucide="gamepad" class="icon"></svg>
+    <a href="https://somethingsmthn.itch.io/toot-the-lute" target="_blank">
+      Toot the Lute on Itch.io
+    </a>
+</p>
+
+
+<div class="project-showcase">
+  <div class="media">
+    <!-- Replace with <video> if needed -->
+
+<iframe  src="https://www.youtube.com/embed/cBHClumqTLE?si=Pl0p3jJeSZclAKhN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  </div>
+  <div class="contributions">
+    <h4>Notable Contributions</h4>
+    <ul>
+      <li>  Enemy horde AI utilizing behaviour trees, EQS, custom utility services</li>
+      <li>  Congestion-aware pathfinding </li>
+      <li>  Controllable dynamic difficulty system</li>
+    </ul>
+  </div>
+</div>
 
 Toot The Lute combines the isometric combat of Hades with the rhythm game system inpisred by Bullets Per Minute (BPM). 
-Click on the beats to performs dashes, attacks and accumulate combos. 
-
-#### DEVELOPED SYSTEMS 
-* **Rhythm gameplay system**
-  The system can detect if input is pressed on the correct beat. Beats are stored in custom "beatmap" data structure wholding repeatable pattern of beats and paused.
-  Additionally, the system is extended by extendable "beat track" HUD that visualizes the moving beats on track.
-
-* **Dynamic audio/input and audio/visual latencies callibratoin**
-  Added a whole UI scene that can adjust audio/input latenyc by clicking on the beat. Audio/visual latency in adjusted by button controlling offset.
+I lead a team of 2nd Year university game developers on their first
+game developement project. I was the sole programmer for the project and 
+I developed a full **Rhythm Gameplay** system with that detect inputs on beat. Additionally, a beat track system to **visualize the incoming beats** and a **dynamic input calibration system** to tune audio/input and audio/visual latencies. As well as other systems such as: combat, enemy AI, boss battle, interactable enironment and many more.
 
 [See More --->](./TootTheLute.html)
 
 
 ## Ratking 
-Engine: **Unity**, Duration: **Feb 2023 To May 2023**, Team-size:  **7**, Role:  **Programmer**
-The game was created in accordance to brief provided by a Modern Wolf.
 
-Ratking is a stealth-platformer game in which you play as a rat trying to infiltrate a mansion of cats.
+<p>
+  <svg data-lucide="cpu" class="icon"></svg>  Unity
+  <svg data-lucide="calendar" class="icon"></svg>  Feb 2023 To May 2023
+  <svg data-lucide="users" class="icon"></svg>  7
+  <svg data-lucide="user-cog" class="icon"></svg>  Programmer
+</p>
+<div class="project-showcase">
+  <div class="media">
+    <!-- Replace with <video> if needed -->
+ <img src="./RatkingBanner.png" alt="Ratking Banner">
+  </div>
+  <div class="contributions">
+    <h4>Notable Contributions</h4>
+    <ul>
+      <li>
+ Custom pathfinding and automatic PF graph builder
+</li>
+      <li>
+ Noise-based distraction/sensory system
+</li>
+      <li>
+ Projectile tracjectory preview ghost
+</li>
+      <li>
+ Classic stealth game state machine
+</li>
+    </ul>
+  </div>
+</div>
 
-
-#### DEVELOPED SYSTEMS 
-* **Navigation Graph Builder**
-  Built a graph-based navigation system for 2D side-scrolling platforming, capable of handling rigid platforms, one-way platforms, 30° and 45° slopes, and ladders.
-  Used by enemy patrol AI to traverse the level. Includes a custom in-editor visualization tool to preview nodes and debug graph generation issues.
-
-* **Noise-based distraction/sensory system**  
-  Designed and implemented a Mark of the Ninja–inspired noise system.
-  Most in-game objects generate noise based on material type, collision force, and player interaction.
-  Guards respond to sound sources, allowing the player to mislead them by throwing noisy objects. Conversely, running or dropping items carelessly can attract unwanted attention.
-
-* **Projectile Trajectory Ghost**
-Developed a fully simulated trajectory preview system for thrown objects.
-Unlike standard parabolic previews, this system accounts for physics-based collisions and bounces, allowing players to plan noise-based distractions with high accuracy.
-
-* **Classic Stealth Game State Machine**
-mplemented a classical stealth AI state machine: Patrol → Search → Chase.
-When a guard detects the player, the last known location is propagated to nearby allies, enabling coordinated responses.
+Ratking is a stealth-platformer game in which you play as a rat trying to infiltrate a mansion of cats. 
+This was a professional project in my 3rd university year, which was in accordance to a extraction-game brief provided by Modern Wolf.
 
 [See More --->](./RatkingMD.html)
 
