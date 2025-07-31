@@ -23,18 +23,8 @@ description: 2D stealth platformer with a grid inventory system. Play a ray tryi
 
 </script>
 
-
-
-
-
-
 # RatKing Summary 
 
-HELOLOOOO
-
-
-This was my first collaborative project and as expect from a team of young the developers the project scope was quite large.
-However, that was an opportunity for me the develop a really system-rich game. 
 
 
 ## Developed Systems

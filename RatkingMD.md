@@ -8,8 +8,7 @@ description: 2D stealth platformer with a grid inventory system. Play a ray tryi
 
 
 # RatKing Summary 
-This was my first collaborative project and as expect from a team of young the developers the project scope was quite large.
-However, that was an opportunity for me the develop a really system-rich game. 
+This was my first collaborative project, and while the scope was ambitious, as is often the case with young development teams, it gave me the opportunity to design and implement a wide range of interconnected gameplay systems.
 
 
 ## Developed Systems
@@ -18,32 +17,34 @@ However, that was an opportunity for me the develop a really system-rich game.
 *   Fully simulated projectile trajectory preview with physics-based behavior.
 *   Drag-and-drop, grid-based inventory system.
 *   Modular crafting system with serialized recipe data.
-*   Game persistence implemented via custom file serialization.
+*   Game persistence is implemented via custom file serialization.
 
 
 ## Pathfinding and Navigation Graph
-Unity’s built-in 2D NavMesh is designed primarily for top-down games and was unsuitable for RatKing’s side-on, tilemap-based platformer layout. To solve this, I developed a custom A* pathfinding system tailored specifically for platformer traversal, including support for rigid platforms, one-way tiles, and ladders.
+Unity’s built-in 2D NavMesh is designed primarily for top-down games and was unsuitable for RatKing’s side-on, tilemap-based platformer layout. To solve this, I developed a custom A* pathfinding system tailored specifically for platform traversal, including support for rigid platforms, one-way tiles, and ladders.
 
-### Graph Optimization 
-Instead of using a naive tile-per-node graph, I optimized the system by identifying key traversal nodes (interesctions between plaftorms and ladders).
-This reduces the memory footpring of the navigation graph as well as improves its performance.
+### Graph optimization 
+Instead of using a naive tile-per-node graph, I optimized the system by identifying key traversal nodes (intersctions between platforms and ladders).
+This reduces the memory footprint of the navigation graph as well as improves its performance.
 
 Results from the system. The green gizmo circles are traversable tiles, the purple ones are the actual nodes in the graph and the red lines represent  the connection between them.
 ![Branching](./PFGridOne.png)
 
+<!--
 ### Edge Case: 30-degree angled platforms
-30-degree angled platforms introduced a unique challenge.
-Unlike flat platforms—where adjacent walkable tiles form a continuous surface—angled platforms often have interleaved unwalkable tiles, breaking continuity in a naive check.
+Tile traversability in the general case is computed by shooting a short ray from the tile's center downwards. If the ray hits nothing tile is free to traverse, is the layer hits 
+layer from the ground layer mask is specified as occupied.
+Unlike flat platforms—where adjacent traversable/walkable tiles form a continuous surface,  platforms angle at 30degrees have interleaved unwalkable tiles, breaking continuity in a naive check.
 
 Solution:
-
+* Extended raycast length to the center of the bottom cell. If two tiles are intersected the tile is a part of a 
 * Maintained a list of known 30° slope tiles
-
-* Used downward 2D raycasts to detect slope normals
-
-* Validated walkability based on physics normals rather than tilemap flags
-
+* If a platform is connected in a direction such as (2,1), (-2,1) or any other variation in which ray length exceeds adjacent tiles, 30 degrees slope check is performed with additional 
+logic to treat the known 30 slope tiles as walkable
 * This approach ensured slope transitions were properly connected and didn’t create false path interruptions.
+-->
+
+### Setting traversable/walkable points
 
 ```
 private void SetTraversablePoints()
@@ -85,12 +86,14 @@ private void SetTraversablePoints()
         }
 }
 ```
-<!--
-//Code snippet 
-```
 
-```
+<!--
 -->
+### Optimizing graph
+Once the traversable tiles are known, they are stored in a list. Connective tiles along a platform are defined by having two walkable neighbours symmetrically around them. Those tiles are treated as redundant, as there is only one direction of movement to follow on them. All other tiles are stored in the optimized graph. The connection in the optimized graphs is formed by greedy walks along traversable tiles in the directions right, right-down, right-up, and optionally down (only if ladder). This handles horizontal, vertical, and 45-degree ground and one-way platforms.
+
+
+
 ## Grid Inventory System
 Implemented a modular, grid-based inventory system where items of varying shapes occupy multiple cells.
 The system features **placement validation**, **real-time feedback**, and integrates seamlessly with the **throwing mechanic** when items are dragged outside the inventory grid.
@@ -101,8 +104,8 @@ The system features **placement validation**, **real-time feedback**, and integr
 
 *  **Observer Pattern**: implemented via Unity events (OnInventoryUpdate, OnUniqueItemAdded) to trigger UI updates and reward progress.
 *  **Separation of Concerns**:
-    *   **Inventory** class handles core logic and state
-    *   **Inventory Grid View** managed UI input, rendering and placement feedback
+    *   **Inventory** class handles core logic and state.
+    *   **Inventory Grid View** managed UI input, rendering, and placement feedback.
 
 
 ### Inventory Item - a data-first approach
@@ -178,9 +181,9 @@ to be used by the throwing mechanic.
 
 
 
-### Deisgner Tools
+### Designer Tools
 
-*   **Inventory Colors**: a style ScriptableObject lets deignser custmozei overlay highlights for valid/invalid cell states.
+*   **Inventory Colors**: a style ScriptableObject lets deignser customize overlay highlights for valid/invalid cell states.
 
 *   **Cell Prefab Architecture**: Each cell is a standalone prefab, allowing further customization if needed.
 
@@ -220,7 +223,7 @@ To avoid interfering with the main game world, a dedicated physics scene is crea
 **On Start (Once):**
 *   Static and dynamic object with layers colliding with the throwable item layer are copied into the Simulation World.
 
-*   A dictionary maps dynamic objects between the main scene and the physics scene, allowing their transforms to be synchronized when need.
+*   A dictionary maps dynamic objects between the main scene and the physics scene, allowing their transforms to be synchronized when needed.
 
 
 **Before Throw Simulation (Once):**
@@ -229,12 +232,12 @@ To avoid interfering with the main game world, a dedicated physics scene is crea
 
 *   All other dynamic objects in the physics scene are reset to match their real-world state.
 
-*    A **ghost copy** of the item - with physics componnet and noise-system components - is instantiated in the isolated physics world.
+*    A **ghost copy** of the item - with physics component and noise-system components - is instantiated in the isolated physics world.
 
 *    The **ghost" copy** of the item is given initial velocity.
 
 **Each Simulation Frame:**
-*   the ghost’s position is sampled and recorded to drive a LineRenderer.
+*   The ghost’s position is sampled and recorded to drive a LineRenderer.
 
 After the simulation the line renderer is used to visually display the predicted trajectory to the player.
 
