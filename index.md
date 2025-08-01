@@ -191,7 +191,11 @@ Engine: **DX12/MiniEngine**,  Role:  **Graphics Programmer**
 <div class="project-showcase">
   <div class="media">
     <!-- Replace with <video> if needed -->
+    <!-- 
  <img src="./CGBanner.gif" alt="Computer Graphics Banner">
+Replace with <video> if needed -->
+ 
+<img src="https://s14.gifyu.com/images/bNM76.gif" alt="CGBanner (1)" >
   </div>
   <div class="contributions">
     <h4>Notable Contributions</h4>

@@ -24,15 +24,19 @@ permalink: /ComputerGraphicsApp.html
 *   Implemented a physically-inspired Gerstner Wave model in the domain shader to deform a tessellated water plane.
 *   Supports multi-layered waves with editable parameters: steepness, wavelength, speed, and direction.
 *   Accurate vertex normal reconstruction was done using derived tangents and bitangents per wave layer to ensure proper lighting and shading.
- <img src="./CG_GerstnerWaveControl.gif" alt="Terrain">
- <img src="https://s14.gifyu.com/images/bNMhY.gif" alt="Terrain">
+<!-- <img src="./CG_GerstnerWaveControl.gif" alt="Terrain">-->
+
+<img src="https://s14.gifyu.com/images/bNMhr.gif" alt="CG GerstnerWaveControl" />
+<!--<img src="https://s14.gifyu.com/images/bNM7C.gif" alt="Mesh Instance Tree" >-->
 
 
 ## Parallel Split Shadow Maps (PSSM)
 *   Integrated Parallel Split Shadow Mapping (PSSM) for high-quality directional shadows with 3 cascade levels (near, mid, far).
 *   Each cascade is calculated using frustum slicing and orthographic projection aligned with the light direction.
 *   Light positions and properties fully configurable at runtime via GUI.
- <img src="./CG_ShadowMaps.gif" alt="Terrain">
+<!--<img src="./CG_ShadowMaps.gif" alt="Terrain">-->
+<img src="https://s14.gifyu.com/images/bNM7j.gif" alt="Parallel-Split Shadow Maps" >
+ 
 
 ## Compute-shader Buoyancy 
 
@@ -42,7 +46,8 @@ permalink: /ComputerGraphicsApp.html
 *   The vertical distance between each hull point and wave surface is used to estimate displaced fluid volume and generate upward buoyant forces.
 
 
- <img src="./CG_CSBuoyancy.gif" alt="Terrain">
+ <!--<img src="./CG_CSBuoyancy.gif" alt="Terrain">-->
+ <img src="https://s14.gifyu.com/images/bNMhY.gif" alt="Buoyancy">
 
 
 ## Screen-Space Reflection (SSR)
@@ -51,7 +56,8 @@ Realistic water surface reflections were achieved using a screen-space ray march
 *   Fallback to a cubemap-based skybox when rays leave the view frustum, avoiding visual artifacts at screen edges.
 *   Exposed fidelity controls (max steps, step size, reflection opacity) via ImGui interface for real-time tweaking and performance balancing.
 
- <img src="./CG_ScreenSpaceReflections.gif" alt="Terrain">
+<img src="https://s14.gifyu.com/images/bNM7R.gif" alt="Scree-Space Reflections" >
+<!-- <img src="./CG_ScreenSpaceReflections.gif" alt="Terrain"> -->
 
 ## Procedural Terrain With Procedural Destruction
 #### Terrain Generation
@@ -92,7 +98,8 @@ Achieved by combining various post-processing techniques:
 *   Edge Blur: Vignette-based Gaussian blur applied only to screen edges using dynamic radial masks.
 *   Water Distortion: Ripple effects applied via trigonometric distortion of UVs in the pixel shader.
 *   Color Tinting & Magnification: Simulated depth distortion with a center-screen magnifier using aspect-corrected circular masks.
- <img src="./CG_RetroWaterDistortion.gif" alt="Terrain">
+<!-- <img src="./CG_RetroWaterDistortion.gif" alt="Terrain"> -->
+<img src="https://s14.gifyu.com/images/bNM70.gif" alt="Retro Water Distortion" >
 
 <!--
 ## Dynamic Tesselation
