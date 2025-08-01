@@ -25,7 +25,7 @@ permalink: /ComputerGraphicsApp.html
 *   Supports multi-layered waves with editable parameters: steepness, wavelength, speed, and direction.
 *   Accurate vertex normal reconstruction was done using derived tangents and bitangents per wave layer to ensure proper lighting and shading.
  <img src="./CG_GerstnerWaveControl.gif" alt="Terrain">
- <img src="https://gifyu.com/image/bNMhY" alt="Terrain">
+ <img src="https://s14.gifyu.com/images/bNMhY.gif" alt="Terrain">
 
 
 ## Parallel Split Shadow Maps (PSSM)
