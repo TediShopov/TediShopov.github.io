@@ -189,6 +189,7 @@ Includes: **Seek**, **Pursue**, **Flee**, **Separate** and **Custom Obstacle Avo
 Integrated beat-timed attack behavior using Wwise beat events.
 
 
+
 <div class="project-showcase">
   <div class="media">
 
@@ -205,7 +206,8 @@ Integrated beat-timed attack behavior using Wwise beat events.
 Applies transparency to foreground objects blocking player view.
 Based on distance and render layer.
 Configurable range per object.
- <img src="./TootTheLute_DynamicTransparency.gif" alt="Toot The Lute Human Cetnered Design">
+<!--<img src="./TootTheLute_DynamicTransparency.gif" alt="Toot The Lute Human Cetnered Design">-->
+<img src="https://s14.gifyu.com/images/bNMl0.gif" alt="TootTheLute DynamicTransparency" >
 
 
 ## Visual Polish
@@ -217,10 +219,12 @@ Configurable range per object.
 <div class="project-showcase">
   <div class="media">
 
- <img src="./TootTheLute_EnemySplit.gif" alt="Toot The Lute Human Cetnered Design">
+ <!--<img src="./TootTheLute_EnemySplit.gif" alt="Toot The Lute Human Cetnered Design">-->
+<img src="https://s14.gifyu.com/images/bNMl8.gif" alt="TootTheLute EnemySplit" >
   </div>
   <div class="media">
- <img src="./TootTheLute_PlayerAttack.gif" alt="Toot The Lute Human Cetnered Design">
+ <!--<img src="./TootTheLute_PlayerAttack.gif" alt="Toot The Lute Human Cetnered Design">-->
+<img src="https://s14.gifyu.com/images/bNMlj.gif" alt="TootTheLute PlayerAttack" >
   </div>
 </div>
 

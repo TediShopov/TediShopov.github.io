@@ -5,6 +5,29 @@ description: 2D stealth platformer with a grid inventory system. Play a ray tryi
 ---
 <link rel="stylesheet" href="site.css">
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.expand-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const expandable = button.closest('.expandable');
+        expandable.classList.toggle('open');
+
+        const arrow = button.querySelector('.arrow');
+        if (arrow) {
+          arrow.textContent = expandable.classList.contains('open') ? '▴' : '▾';
+        }
+      });
+    });
+  });
+
+</script>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    lucide.createIcons();
+  });
+</script>
 
 
 # RatKing Summary 
@@ -46,11 +69,18 @@ logic to treat the known 30 slope tiles as walkable
 
 ### Setting traversable/walkable points
 
-```
+<div class="expandable">
+<button class="expand-toggle ">Initializing Traversable Points Code Snippet ▾</button>
+<div class="expand-content">
+
+<div class="highlight">
+<pre class="highlight">
+
+<code>
 private void SetTraversablePoints()
 {
-    for (var y = 0; y < SuperTileMap.m_Height; y++)
-        for (var x = 0; x < SuperTileMap.m_Width; x++)
+    for (var y = 0; y &lt; SuperTileMap.m_Height; y++)
+        for (var x = 0; x &lt; SuperTileMap.m_Width; x++)
         {
             Vector3Int positionInGrid = new(x, -y);
             //Ladder tile is a tile that is found on ladder layer
@@ -64,28 +94,33 @@ private void SetTraversablePoints()
             Vector3Int bottomTile = positionInGrid + Vector3Int.down;
             if (
                 IsGround(positionInGrid, positionInGrid) == false 
-                && OnGroundOrPlatform(positionInGrid)
-                && IsTraversable(positionInGrid+Vector3Int.up,positionInGrid)) 
+                &amp;&amp; OnGroundOrPlatform(positionInGrid)
+                &amp;&amp; IsTraversable(positionInGrid+Vector3Int.up,positionInGrid)) 
                 _traversableTiles.Add(new Vector3Int(x, -y));
 
 
             Vector3 startingPositionOnbottomOfTile = _tilemapGrid.GetCellCenterWorld(positionInGrid);
             Vector3 positionOfBottomTIle = _tilemapGrid.GetCellCenterWorld(positionInGrid + Vector3Int.down);
             ContactFilter2D conmFilter2D = new ContactFilter2D();
-            conmFilter2D.layerMask = LayerMask.GetMask("Ground", "Platform");
+            conmFilter2D.layerMask = LayerMask.GetMask(&quot;Ground&quot;, &quot;Platform&quot;);
             conmFilter2D.useLayerMask = true;
-            List<RaycastHit2D> hits = new List<RaycastHit2D>();
+            List&lt;RaycastHit2D&gt; hits = new List&lt;RaycastHit2D&gt;();
             var hitCount = Physics2D.Linecast(startingPositionOnbottomOfTile, positionOfBottomTIle,
                 conmFilter2D, hits);
             Vector2 dirOfRay = (positionOfBottomTIle - startingPositionOnbottomOfTile).normalized;
-            if (hitCount > 1)
+            if (hitCount &gt; 1)
             {
                 _30degSlopeTiles.Add(positionInGrid);
             }
 
         }
 }
-```
+</code>
+</pre>
+</div>
+</div>
+</div>
+
 
 <!--
 -->
@@ -118,26 +153,32 @@ When picked up, an **InventoryObject** is instantiated using the referenced **In
 to be used by the throwing mechanic.
 
 
-```
-  public bool IsInGrid(Vector3Int cell)
+<div class="expandable">
+<button class="expand-toggle ">Inventory Placing Code Snippet ▾</button>
+<div class="expand-content">
+
+<div class="highlight">
+<pre class="highlight">
+
+<code>  public bool IsInGrid(Vector3Int cell)
   {
-      return (-GridDimensions.x/2.0f <= cell.x 
-               && cell.x < GridDimensions.x/2.0f 
-               && -GridDimensions.y / 2.0f <= cell.y 
-               && cell.y < GridDimensions.y / 2.0f);
+      return (-GridDimensions.x/2.0f &lt;= cell.x 
+               &amp;&amp; cell.x &lt; GridDimensions.x/2.0f 
+               &amp;&amp; -GridDimensions.y / 2.0f &lt;= cell.y 
+               &amp;&amp; cell.y &lt; GridDimensions.y / 2.0f);
   }
   public bool CanPlaceItem(InventoryObject item)
   {
       var isValidPosition = true;
       
       //ItemToPlace.UpdatePosition(cooridinatePointedByMouse, InventoryGrid);
-      var cellsInItem = new List<Vector3Int>(item.OccupiedCells);
+      var cellsInItem = new List&lt;Vector3Int&gt;(item.OccupiedCells);
       isValidPosition = 
-          cellsInItem.All(c => IsInGrid(c) 
-                          && IsOccuiedByotherItem(c) == null);
+          cellsInItem.All(c =&gt; IsInGrid(c) 
+                          &amp;&amp; IsOccuiedByotherItem(c) == null);
       cellsInItem =  
-          cellsInItem.Where(c => IsInGrid(c) 
-                          && IsOccuiedByotherItem(c) == null).ToList();
+          cellsInItem.Where(c =&gt; IsInGrid(c) 
+                          &amp;&amp; IsOccuiedByotherItem(c) == null).ToList();
       return isValidPosition;
   }
 
@@ -175,7 +216,14 @@ to be used by the throwing mechanic.
       }
       return item;
   }
-```
+</code>
+</pre>
+</div>
+</div>
+</div>
+
+
+
 
 
 

@@ -12,7 +12,6 @@ Passionate game programmer with hands-on experience since 2017. Started with bac
 I recently graduated with **First Class Honours**, with a dissertation focused on **procedural stealth-level generation**. I'm currently completing a master's thesis on **optimizing surfel-based global illumination**.
 My core interests lie in building **gameplay systems**, **real-time graphics**, and **developer tools** that empower designers and accelerate iteration.
 
-[See More --->](./about-me.html)
 
 <div class="contact">
 <a href="mailto:teodorshopov01@gmail.com" target="_blank" style="text-decoration: none; color: inherit;">

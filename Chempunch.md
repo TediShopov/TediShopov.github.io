@@ -7,6 +7,23 @@ permalink: /Chempunch.html
 
 <link rel="stylesheet" href="site.css">
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.expand-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const expandable = button.closest('.expandable');
+        expandable.classList.toggle('open');
+
+        const arrow = button.querySelector('.arrow');
+        if (arrow) {
+          arrow.textContent = expandable.classList.contains('open') ? '▴' : '▾';
+        }
+      });
+    });
+  });
+
+</script>
+
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -26,11 +43,17 @@ permalink: /Chempunch.html
 
 
 #### Description
+
+
+<!--
 A first-person action-packed wave-defence experience with some resource management mechanics or 
 as described in the game's pitch:
 
 > "Chempunch is an intense wave defence action game focusing on reactive but aggressive gameplay in a chempunk world.
 >  Alone but far from helpless, you must protect your slums from an oncoming horde, using chemicals you route around your body to empower different actions."
+-->
+
+
 
 
 <div class="project-showcase">
@@ -39,6 +62,37 @@ as described in the game's pitch:
 <iframe   src="https://www.youtube.com/embed/68KRv2RYLxA?si=dg78yrvzcB-sfkJV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
+
+<div class="project-showcase">
+  <div class="media">
+
+<p>
+A first-person action-packed wave-defence experience with some resource management mechanics or 
+as described in the game's pitch:
+</p>
+  <blockquote>
+<p>
+"Chempunch is an intense wave defence action game focusing on reactive but aggressive gameplay in a chempunk world.
+Alone but far from helpless, you must protect your slums from an oncoming horde, using chemicals you route around your body to empower different actions."
+</p>
+  </blockquote>
+</div>
+  <div class="contributions">
+
+  <img src="./ChempunchHand.png">
+</div>
+</div>
+
+
+  <picture>
+  <source type = "image/webp" srcset="./ChemPunch-Team-Work.webp"/>
+    <img src="./ChemPunch-Team-Work.webp" alt="Team Work illustration" />
+
+
+  </picture>
+
+
+
 ## Enemy Horde AI System
 The AI was originally designed for a mode where enemies rushed an objective and the player intercepted them. This later shifted to wave defence, but the AI kept its flexibility.
 
@@ -65,63 +119,75 @@ A custom data structure, the **Congestion Map**, tracks traffic density across n
 This data is then fed into a custom **FCustomRecastNavQueryFilter**, which biases pathfinding away from highly congested areas. As a result, enemies naturally spread out and avoid forming predictable chokepoints, making encounters feel more dynamic and organic.
 
 
+<div class="expandable">
+<button class="expand-toggle ">Updating Congestion Map Code Snippet ▾</button>
+<div class="expand-content">
 
-    void AAICoordinatorActor::UpdateEnemyPerNode(TMap<int64, int>& NodeEnemyMap) const
+<div class="highlight">
+<pre class="highlight">
+
+<code>
+void AAICoordinatorActor::UpdateEnemyPerNode(TMap&lt;int64, int&gt;&amp; NodeEnemyMap) const
+{
+    //Initialize the enemy per node map
+    NodeEnemyMap.Empty();
+    for (AHordeEnemyAI* EnemyAI : HordeEnemyAIs)
     {
-        //Initialize the enemy per node map
-        NodeEnemyMap.Empty();
-        for (AHordeEnemyAI* EnemyAI : HordeEnemyAIs)
-        {
-            NavNodeRef EnemyCurrentNatNode = GetNavNodeRef(EnemyAI);
+        NavNodeRef EnemyCurrentNatNode = GetNavNodeRef(EnemyAI);
 
-            if(EnemyCurrentNatNode == 0)
-                continue;
-            //Add or increment the enemy map
-            if (NodeEnemyMap.Contains(EnemyCurrentNatNode) )
-                NodeEnemyMap[EnemyCurrentNatNode]++;
-            else
-                NodeEnemyMap.Add(EnemyCurrentNatNode, 1);
+        if(EnemyCurrentNatNode == 0)
+            continue;
+        //Add or increment the enemy map
+        if (NodeEnemyMap.Contains(EnemyCurrentNatNode) )
+            NodeEnemyMap[EnemyCurrentNatNode]++;
+        else
+            NodeEnemyMap.Add(EnemyCurrentNatNode, 1);
 
-
-        }
-    }
-
-    void AAICoordinatorActor::UpdateAllCongestion()
-    {
-        CongestionMap.Reset();
-
-
-        //Update enemy count per node
-        UpdateEnemyPerNode(EnemyPerNode);
-
-
-        for (auto NavNodeEnemyCountPair : EnemyPerNode)
-        {
-            //Get the congestion value for the node
-            int enemyCount = NavNodeEnemyCountPair.Value;
-
-            UNavigationSystemV1* NavSys = UNavigationSystemV1::GetCurrent(GetWorld());
-            if (ensure(NavSys))
-            {
-                auto NavMesh = Cast<ARecastNavMesh>(NavSys->GetMainNavData());
-                float NavPolySize = 
-                    CalculatePolyAreaSize(NavNodeEnemyCountPair.Key, NavMesh);
-
-                //Current congestion algorithm interpolates the new estimated area value
-                //in the range on [0, 3*polygonArea]
-
-                float estimatedFreeArea = NavPolySize - enemyCount * 
-                    this->CongestionMapParams.CongestionWeightPerEnemy;
-
-
-                float congestionValue = 1 -
-                    UKismetMathLibrary::NormalizeToRange(estimatedFreeArea, 
-                        0, NavPolySize);
-                CongestionMap.Add(NavNodeEnemyCountPair.Key, congestionValue);
-            }
-        }
 
     }
+}
+void AAICoordinatorActor::UpdateAllCongestion()
+{
+    CongestionMap.Reset();
+
+
+    //Update enemy count per node
+    UpdateEnemyPerNode(EnemyPerNode);
+
+
+    for (auto NavNodeEnemyCountPair : EnemyPerNode)
+    {
+        //Get the congestion value for the node
+        int enemyCount = NavNodeEnemyCountPair.Value;
+
+        UNavigationSystemV1* NavSys = UNavigationSystemV1::GetCurrent(GetWorld());
+        if (ensure(NavSys))
+        {
+            auto NavMesh = Cast&lt;ARecastNavMesh&gt;(NavSys-&gt;GetMainNavData());
+            float NavPolySize = 
+                CalculatePolyAreaSize(NavNodeEnemyCountPair.Key, NavMesh);
+
+            //Current congestion algorithm interpolates the new estimated area value
+            //in the range on [0, 3*polygonArea]
+
+            float estimatedFreeArea = NavPolySize - enemyCount * 
+                this-&gt;CongestionMapParams.CongestionWeightPerEnemy;
+
+
+            float congestionValue = 1 -
+                UKismetMathLibrary::NormalizeToRange(estimatedFreeArea, 
+                    0, NavPolySize);
+            CongestionMap.Add(NavNodeEnemyCountPair.Key, congestionValue);
+        }
+    }
+}
+</code>
+</pre>
+</div>
+</div>
+</div>
+
+
 
 
 ## Wave System
