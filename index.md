@@ -191,7 +191,7 @@ Engine: **DX12/MiniEngine**,  Role:  **Graphics Programmer**
 <div class="project-showcase">
   <div class="media">
     <!-- Replace with <video> if needed -->
- <img src="./CG_Banner.gif" alt="Computer Graphics Banner">
+ <img src="./CGBanner.gif" alt="Computer Graphics Banner">
   </div>
   <div class="contributions">
     <h4>Notable Contributions</h4>
