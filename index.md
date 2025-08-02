@@ -60,6 +60,12 @@ My core interests lie in building **gameplay systems**, **real-time graphics**, 
   <svg data-lucide="cpu" class="icon"></svg>  Unreal Engine
   <svg data-lucide="award" class="icon"></svg> Dare Academy Finalist  
   <svg data-lucide="map-pin" class="icon"></svg> Presented at <strong>EGX x MCM 2024 London</strong>
+
+  <br>
+  <svg data-lucide="gamepad" class="icon"></svg>
+    <a href="https://teodorshopov.itch.io/chempunch" target="_blank">
+      Chempunch on Itch.io
+    </a>
 </p>
 
 
