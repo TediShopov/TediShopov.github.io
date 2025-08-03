@@ -6,6 +6,18 @@
     display: flex;
 
 }
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #1d1d1f;
+    color: #656565;
+}
+
+
 .contact .icon
 {
   width: 2.5rem;
