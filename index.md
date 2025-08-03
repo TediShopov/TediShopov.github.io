@@ -8,9 +8,23 @@ description: Gameplay Systems / Computer Graphics Programmer
 
 **About Me**
 
-Passionate game programmer with hands-on experience since 2017. Started with backend web development in C#/ASP.NET, then transitioned fully into game programming to pursue systems-driven, creative development.
-I recently graduated with **First Class Honours**, with a dissertation focused on **procedural stealth-level generation**. I'm currently completing a master's thesis on **optimizing surfel-based global illumination**.
+Passionate game programmer with hands-on experience since 2017. Started with backend web development in **C#/ASP.NET**, then transitioned fully into game programming to pursue systems-driven, creative development.
+I recently graduated with **First Class Honours**, with a dissertation focused on **procedural stealth-level generation**. I'm currently completing a master's thesis on *optimizing surfel-based global illumination*.
 My core interests lie in building **gameplay systems**, **real-time graphics**, and **developer tools** that empower designers and accelerate iteration.
+
+<!--
+<div class="project-showcase">
+  <div class="contributions">
+  <p>
+Passionate game programmer with hands-on experience since 2017. Started with backend web development in **C#/ASP.NET**, then transitioned fully into game programming to pursue systems-driven, creative development.
+I recently graduated with **First Class Honours**, with a dissertation focused on **procedural stealth-level generation**. I'm currently completing a master's thesis on *optimizing surfel-based global illumination*.
+My core interests lie in building **gameplay systems**, **real-time graphics**, and **developer tools** that empower designers and accelerate iteration.
+  </p>
+  </div>
+
+ <img style="width:300px;height:300px;" src="./ChempunchMe.jpg" alt="Me at EGX pointing at Chempunch Banner">
+</div>
+-->
 
 
 <div class="contact">
