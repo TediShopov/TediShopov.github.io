@@ -124,11 +124,17 @@ I developed a modular **enemy AI** system using utility scoring,**behavior trees
 Engine: **DX12/MiniEngine**,  Role:  **Graphics Programmer**
 -->
 
-## Computer Graphics Project
+## Game Engine / Render System / DX11
+
 
 <p>
   <svg data-lucide="cpu" class="icon"></svg>  DX11
   <svg data-lucide="user-cog" class="icon"></svg>  Computer Graphics & Procedural Programmer
+<br>
+  <svg data-lucide="github" class="icon"></svg>
+    <a href="https://github.com/TediShopov/GameEngine-RenderSystem-DX11" target="_blank">
+      Github
+    </a>
 </p>
 <div class="project-showcase">
   <div class="media">

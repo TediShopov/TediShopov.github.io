@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Computer Graphics Project
+title: Game Engine / Render System / DX11
 description: Simulates an immersive rocky ocean environment in which a player controls a ship capable of destroying procedural terrain.
 permalink: /ComputerGraphicsApp.html
 ---
@@ -16,6 +16,11 @@ permalink: /ComputerGraphicsApp.html
 <p>
   <svg data-lucide="cpu" class="icon"></svg>  DX11
   <svg data-lucide="user-cog" class="icon"></svg>  Computer Graphics & Procedural Programmer
+<br>
+  <svg data-lucide="github" class="icon"></svg>
+    <a href="https://github.com/TediShopov/GameEngine-RenderSystem-DX11" target="_blank">
+      Github
+    </a>
 </p>
 
 
