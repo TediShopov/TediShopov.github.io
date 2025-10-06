@@ -46,7 +46,7 @@ permalink: /TootTheLute.html
     </a>
 <br>
   <svg data-lucide="github" class="icon"></svg>
-    <a href="https://github.com/TediShopov/GameEngine-RenderSystem-DX11" target="_blank">
+    <a href="https://github.com/TediShopov/TootTheLute_RhythmPrototype" target="_blank">
       Github
     </a>
 </p>

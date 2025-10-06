@@ -17,7 +17,12 @@ permalink: /SurfelBasedGI.html
   <svg data-lucide="cpu" class="icon"></svg> C++, DirectX 12 (DXR), HLSL, MiniEngine  
   <svg data-lucide="users" class="icon"></svg> Solo Project  
   <svg data-lucide="user-cog" class="icon"></svg> Researcher & Graphics Programmer  
-</p>
+<br>
+  <svg data-lucide="github" class="icon"></svg>
+    <a href="https://github.com/TediShopov/SurfelBasedGI_DX12?tab=readme-ov-file" target="_blank">
+      Github
+    </a>
+  </p>
 
 ## Project Overview
 <div class="project-showcase">
