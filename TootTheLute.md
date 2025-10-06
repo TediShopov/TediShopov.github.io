@@ -44,6 +44,11 @@ permalink: /TootTheLute.html
     <a href="https://somethingsmthn.itch.io/toot-the-lute" target="_blank">
       Toot the Lute on Itch.io
     </a>
+<br>
+  <svg data-lucide="github" class="icon"></svg>
+    <a href="https://github.com/TediShopov/GameEngine-RenderSystem-DX11" target="_blank">
+      Github
+    </a>
 </p>
 
 #### Role and Responsibilities
